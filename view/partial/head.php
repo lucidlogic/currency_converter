@@ -1,7 +1,7 @@
 <!DOCTYPE html> 
 <html> 
 <head> 
-	<title>My Page</title> 
+	<title>Exchange rates</title> 
 	<meta name="viewport" content="width=device-width, initial-scale=1"> 
 	<link rel="stylesheet" href="/css/jquery.mobile-1.2.0.min.css" />
 	<script src="/js/jquery-1.8.2.min.js"></script>
