@@ -15,7 +15,7 @@ $config = new config();
 $exrate = new Exchange_Rate();
 
 //cli check
-if($exrate->isCommandLineInterface())
+if($exrate->isCommandLineInterface() && $exrate->isEmptyDay())
 {
     //handle remote csv of exchange rates
     $handle = fopen($config->getXeUrl(), "r");

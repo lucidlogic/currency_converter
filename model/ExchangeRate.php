@@ -103,6 +103,26 @@ class Exchange_Rate
 	   return @$return ;
 	}
         
+        /**
+        * Check if no currencied exist for today
+        * @return bool
+        */
+        function isEmptyDay()
+	{
+           $this->dataconnection = new Db();
+	   $sql = sprintf("SELECT count(*) as tot FROM ".Exchange_Rate::TABLE_NAME." WHERE `created_at` = '%s' ",date('Y-m-d'));
+           $result = mysql_query($sql,$this->dataconnection->dblinkid);
+           $return = true;
+           
+           while($row = mysql_fetch_array($result))
+	   {
+	    if($row['tot'])$return = false;
+	   }
+				  
+	   mysql_close($this->dataconnection->dblinkid); 
+	   return @$return ;
+	}
+        
         
         
         
