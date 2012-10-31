@@ -13,7 +13,7 @@ Upload application files
 Setting up cron
 ----------------------------
 
-add the following lin to your crontab to execute the cron.php through command line
+add the following line to your crontab to execute the cron.php through command line
 0 09 * * * /usr/bin/php -f /var/www/cli/cron.php
 
 With a preferred time for cron
