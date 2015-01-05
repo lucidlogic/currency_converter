@@ -11,7 +11,7 @@ class Db
      * @object db connection
      */
     public  $dblinkid;
-		
+        
     /**
     * Establish Database connection
     */
@@ -25,8 +25,8 @@ class Db
             return false;
         }
         
-	// Select the database using the established connection			
-	mysql_select_db($config->getDbName(),$this->dblinkid);
+    // Select the database using the established connection			
+    mysql_select_db($config->getDbName(),$this->dblinkid);
     }	
 
 }

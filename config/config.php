@@ -19,7 +19,7 @@ class Config
     */
     function __construct() 
     {
-	date_default_timezone_set($this->time_zone);
+    date_default_timezone_set($this->time_zone);
     }
     
     /**

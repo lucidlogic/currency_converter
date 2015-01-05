@@ -16,7 +16,7 @@ class Controller
      {  
          $exrate = new Exchange_Rate();
          //all currencies listed in the sysetm
-     	 $curs = $exrate->getCurrencyList(); 
+          $curs = $exrate->getCurrencyList(); 
          //concat year month day to form DB date
          $created_at = sprintf('%s-%s-%s',$_POST['created_year'],$_POST['created_month'],$_POST['created_day']);
         //source cur default USD

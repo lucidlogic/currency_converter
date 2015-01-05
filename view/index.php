@@ -3,9 +3,9 @@
 
 <div data-role="page" id="page">
 
-	<div data-role="header">
-		<h1>Exchange Rates</h1>
-	</div><!-- /header -->
+    <div data-role="header">
+        <h1>Exchange Rates</h1>
+    </div><!-- /header -->
 
 <div data-role="content">	
  <form action='/' method='post' class='ui-body ui-body-b ui-corner-all' data-ajax="false"> 
@@ -29,10 +29,10 @@
     <div data-role="fieldcontain">
        
        <fieldset data-role="controlgroup" data-type="horizontal" class=" ui-controlgroup ui-controlgroup-horizontal"><div role="heading" class="ui-controlgroup-label">On this day ...</div><div class="ui-controlgroup-controls">
-		
-		<div class="ui-select">
+        
+        <div class="ui-select">
                         <select name="created_day" id="select-choice-day">
-			<?php
+            <?php
                         $selected = (isset($_POST['created_day']) ? $_POST['created_day'] : date('d'));
 
                         for ($i = 1; $i <= 31; $i++)
@@ -44,10 +44,10 @@
                         }
 
                          ?>
-		</select></div>
-		<div class="ui-select">
+        </select></div>
+        <div class="ui-select">
                         <select name="created_month" id="select-choice-month">
-			<?php
+            <?php
                         $selected = (isset($_POST['created_month']) ? $_POST['created_month'] : date('m'));
 
                         for ($i = 1; $i <= 12; $i++)
@@ -60,13 +60,13 @@
                         }
 
                          ?>
-		</select></div>
+        </select></div>
 
-		
+        
 
-		<div class="ui-select">
+        <div class="ui-select">
                         <select name="created_year" id="select-choice-year">
-			<?php
+            <?php
                         $selected = (isset($_POST['created_year']) ? $_POST['created_year'] : date('Y'));
 
                         for ($i = date('Y'); $i >= 2000; $i--)
@@ -77,8 +77,8 @@
                         }
 
                          ?>
-		</select></div>
-	</div></fieldset>
+        </select></div>
+    </div></fieldset>
     </div>
      <input type='submit' value='Go &#9658;'/>
   
@@ -88,20 +88,20 @@
     ?>
            <p>&nbsp;</p>     
                 <div class="ui-grid-b">
-			<div class="ui-block-a"><div class="ui-bar ui-bar-a" style="height:30px;"></div></div>
-			<div class="ui-block-b"><div class="ui-bar ui-bar-a" style="height:30px;"></div></div>
-			<div class="ui-block-c"><div class="ui-bar ui-bar-a" style="height:30px;">Date</div></div>
-		</div>
+            <div class="ui-block-a"><div class="ui-bar ui-bar-a" style="height:30px;"></div></div>
+            <div class="ui-block-b"><div class="ui-bar ui-bar-a" style="height:30px;"></div></div>
+            <div class="ui-block-c"><div class="ui-bar ui-bar-a" style="height:30px;">Date</div></div>
+        </div>
            <?php foreach($rates as $rate){ 
                $amount = $_POST['source_amount'];
                $total = $amount*$rate['base']*$rate['rate_buy'];
                
                ?>
            <div class="ui-grid-b">
-			<div class="ui-block-a"><div class="ui-bar ui-bar-d" style="height:30px;"><?php echo $rate['long']?></div></div>
-			<div class="ui-block-b"><div class="ui-bar ui-bar-d" style="height:30px;"><?php echo $rate['short'].' '.money_format('%i', $total)?></div></div>
-			<div class="ui-block-c"><div class="ui-bar ui-bar-d" style="height:30px;"><?php echo $rate['created_at']?></div></div>
-		</div>
+            <div class="ui-block-a"><div class="ui-bar ui-bar-d" style="height:30px;"><?php echo $rate['long']?></div></div>
+            <div class="ui-block-b"><div class="ui-bar ui-bar-d" style="height:30px;"><?php echo $rate['short'].' '.money_format('%i', $total)?></div></div>
+            <div class="ui-block-c"><div class="ui-bar ui-bar-d" style="height:30px;"><?php echo $rate['created_at']?></div></div>
+        </div>
            <?php } ?>
   <?php
     }else{  ?>

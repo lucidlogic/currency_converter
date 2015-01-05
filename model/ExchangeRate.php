@@ -10,7 +10,7 @@ class Exchange_Rate
         /**
          * @object Data
         */
-	public $dataconnection;
+    public $dataconnection;
         
         /**
          * @string date
@@ -44,7 +44,7 @@ class Exchange_Rate
         /**
         * Saves exchange rate record 
         * @param array $data
-        * @return bool
+        * @return resource
         */
 	function save($data) 
         {
@@ -82,6 +82,9 @@ class Exchange_Rate
         
         /**
         * Get List of currencies
+        * @param string $source
+        * @param string $created_at
+        * @param string $target
         * @return array
         */
         function getRateList($source,$created_at,$target)
